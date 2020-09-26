@@ -1,0 +1,272 @@
+// Main Sass File
+
+//Variables
+$pri-color-main: #56ff14;
+$pri-color-dark: #87e848;
+$pri-color-darker: #81db44;
+$text-main: #555770;
+$text-light: #c7c8d9;
+$dark: #333333;
+$white: #fff;
+
+//Shadows
+$shadow-left: 4px 0px 4px rgba(0, 0, 0, 0.1);
+$shadow-bottom: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+//media quires
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @include sm {
+    font-size: 10px !important;
+    overflow-x: hidden;
+  }
+}
+
+body {
+  color: $text-main;
+}
+
+.lead {
+  font-size: 1rem !important;
+}
+
+.contact-top {
+  display: flex;
+  padding: 0.5rem 4rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $dark;
+
+  #info {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    color: $white;
+
+    .items {
+      padding-left: 1.2rem;
+
+      &:first-child {
+        padding: 0;
+      }
+
+      a {
+        color: $white;
+      }
+
+      :hover {
+        color: $pri-color-main;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #fast-btns {
+    margin: 0;
+
+    .btn {
+      background-color: $pri-color-main;
+      margin-left: 0.5rem;
+
+      @include sm {
+        width: 100%;
+        margin: 0.2rem 0;
+      }
+
+      .btn-text {
+        color: $white;
+        text-transform: uppercase;
+      }
+
+      :hover {
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: $pri-color-darker !important;
+      }
+    }
+  }
+}
+
+.nav-link {
+  color: $text-main;
+
+  &:hover {
+    color: $pri-color-main !important;
+  }
+}
+
+.navbar-toggler {
+  color: $dark;
+}
+
+.carousel-item {
+  height: 30rem;
+
+  @include sm {
+    height: 30rem;
+  }
+}
+
+.carousel-image-1 {
+  background: url('../img/header1.jpg');
+  background-size: cover;
+
+  @include sm {
+    background: url('../img/header1-sm.jpg');
+    background-repeat: no-repeat;
+  }
+}
+
+.carousel-image-2 {
+  background: url('../img/header2.jpg');
+  background-size: cover;
+
+  @include sm {
+    background: url('../img/header2-sm.jpg');
+    background-repeat: no-repeat;
+  }
+}
+
+.carousel-image-3 {
+  background: url('../img/header3.jpg');
+  background-size: cover;
+
+  @include sm {
+    background: url('../img/header3-sm.jpg');
+    background-repeat: no-repeat;
+  }
+}
+
+.carousel-sm-text {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.choose-us {
+  border-radius: 1rem;
+  transform: translateY(-13%);
+  box-shadow: $shadow-bottom;
+  margin: auto;
+
+  @include sm {
+    transform: translateY(0);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .choose-item {
+    border-radius: 0.5rem;
+    padding: 2rem 1rem;
+    fill: $pri-color-main;
+    transition: all 300ms linear 0s;
+
+    &:hover {
+      color: $white;
+      fill: $white;
+      transform: scaleY(1.1);
+      cursor: pointer;
+      background-color: $pri-color-main;
+    }
+  }
+}
+
+.service-item {
+  padding: 1rem 0;
+  width: 50%;
+  border: 0.1rem solid $pri-color-main;
+
+  .service-img {
+    height: 5rem;
+  }
+}
+
+.gallery-item {
+  padding: 0;
+
+  .gallery-img {
+    width: 90%;
+    height: 90%;
+    border: 0.1rem solid $pri-color-main;
+    transition: all 300ms linear 0s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2, 1.2);
+      z-index: -1;
+    }
+  }
+}
+
+#contact {
+  background-color: $pri-color-main;
+  border-radius: 2rem 2rem 0 0;
+
+  .info {
+    list-style: none;
+    margin: 0;
+    color: $white;
+    padding: 0;
+
+    .items {
+      margin-bottom: 1rem;
+      a {
+        color: $white;
+      }
+
+      :hover {
+        color: $dark;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-title {
+  color: $pri-color-main;
+  transition: all 300ms linear 0s;
+
+  &:hover {
+    letter-spacing: 0.1rem;
+  }
+}
