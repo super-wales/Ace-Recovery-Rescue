@@ -1,7 +1,7 @@
 // Main Sass File
 
 //Variables
-$pri-color-main: #56ff14;
+$pri-color-main: #24a54a;
 $pri-color-dark: #87e848;
 $pri-color-darker: #81db44;
 $text-main: #555770;
@@ -50,6 +50,7 @@ $screen-lg-min: 992px;
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 
   @include sm {
     font-size: 10px !important;
